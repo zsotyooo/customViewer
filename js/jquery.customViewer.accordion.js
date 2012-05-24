@@ -7,6 +7,11 @@
 			this.isVisible = false;
 			this.isHidden = true;
 		};
+		
+		this.destory = function() {
+			alert('d'+this.originalHeight);
+			this.cvInstance.content.css('height',this.originalHeight);
+		};
 
 		this.show = function() {
 			var This = this;

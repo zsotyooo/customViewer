@@ -9,7 +9,8 @@
 			};
 
 			this.positionOut();
-			this.cvInstance.content.detach().appendTo($('body')).show();
+			
+			this.cvInstance.content.css('height','auto').detach().appendTo($('body')).show();
 			this.isVisible = false;
 			this.isHidden = true;
 		};
