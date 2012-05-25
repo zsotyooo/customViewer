@@ -1,0 +1,30 @@
+/* 
+    Document   : styles.css
+    Created on : 2012.05.24., 21:24:44
+    Author     : zsotyooo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+body{color: #333; font-family: Verdana}
+ul,pre,p{clear:both;}
+ul, ol{
+	margin: 0;
+	padding: 0;
+}
+ol{
+	list-style-type: none;
+}
+.wrapper{margin: 0 20px}
+.header{padding: 10px; background: #808080}
+.header h1{color: #222; font-family: Georgia}
+
+.accordion span{cursor:pointer}
+.accordion ol{overflow:hidden}
+
+.dropdown > li{float:left; margin-right: 20px;}
+.dropdown span{cursor:pointer}
+.dropdown-content{position:absolute}
+
+.slidedown > li{float:left; margin-right: 20px;position: relative}
+.slidedown span{cursor:pointer}
+.slidedown ol{position:absolute; top: 16px; right: 0; left: 0; min-width: 120px;display: none;}

@@ -90,6 +90,10 @@
 	});
 	
 	$customViewer.fn.extend({
+		setOptions: function(options){
+			$.extend(this.options, options || {});
+		},
+		
 		addEvents: function() {
 			var This=this;
 			

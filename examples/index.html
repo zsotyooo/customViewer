@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>customViewer example</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link  type="text/css" rel="stylesheet" href="../syles/styles.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.customViewer.js"></script>
+		<script type="text/javascript" src="../js/jquery.customViewer.slideDown.js"></script>
+		<script type="text/javascript" src="../js/jquery.customViewer.dropDown.js"></script>
+		<script type="text/javascript" src="../js/jquery.customViewer.accordion.js"></script>
+		<script type="text/javascript" src="../js/jquery.customViewer.gridproductinfo.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="header">
+				<h1>customViewer example</h1>
+			</div>
+			<div class="content">
+				<p>jQuery plugin for typical show/hide cases. You can write handlers easily, and switch them any time. This repository contains accordion, slideDown, dropDown functionalities too.</p>
+				<h3>Using as an accordion.</h3>
+				<div class="bl1">
+					<ul class="accordion">
+						<li>
+							<span>part1</span>
+							<ol>
+								<li>item1</li>
+								<li>item2</li>
+								<li>item3</li>
+								<li>item4</li>
+								<li>item5</li>
+							</ol>
+						</li>
+						<li>
+							<span>part2</span>
+							<ol>
+								<li>item1</li>
+								<li>item2</li>
+								<li>item3</li>
+								<li>item4</li>
+								<li>item5</li>
+							</ol>
+						</li>
+						<li>
+							<span>part3</span>
+							<ol>
+								<li>item1</li>
+								<li>item2</li>
+								<li>item3</li>
+								<li>item4</li>
+								<li>item5</li>
+							</ol>
+						</li>
+					</ul>
+
+					<script type="text/javascript">
+						$(document).ready(function(){
+							$(".accordion > li").customViewer({
+								timeoutTime: 1000,
+								hideAll: true,
+								contentSelector: 'ol',
+								handlerSelector: 'span',
+								showHandler: 'accordion'
+							});
+						});
+
+					</script>
+				</div>
+				<pre data-paste="bl1"></pre>
+				<h3>Using dropdown.</h3>
+				<div class="bl2">
+					<ul class="dropdown">
+						<li>
+							<span>part1</span>
+							<ol class="dropdown-content">
+								<li>item1</li>
+								<li>item2</li>
+								<li>item3</li>
+								<li>item4</li>
+								<li>item5</li>
+							</ol>
+						</li>
+						<li>
+							<span>part2</span>
+							<ol class="dropdown-content">
+								<li>item1</li>
+								<li>item2</li>
+								<li>item3</li>
+								<li>item4</li>
+								<li>item5</li>
+							</ol>
+						</li>
+						<li>
+							<span>part3</span>
+							<ol class="dropdown-content">
+								<li>item1</li>
+								<li>item2</li>
+								<li>item3</li>
+								<li>item4</li>
+								<li>item5</li>
+							</ol>
+						</li>
+					</ul>
+
+					<script type="text/javascript">
+						$(document).ready(function(){
+							$(".dropdown > li").customViewer({
+								timeoutTime: 1000,
+								hideAll: true,
+								contentSelector: 'ol',
+								handlerSelector: 'span',
+								showHandler: 'dropdown'
+							});
+						});
+
+					</script>
+				</div>
+				<pre data-paste="bl2"></pre>
+				<h3>Using slidedown.</h3>
+				<div class="bl3">
+					<ul class="slidedown">
+						<li>
+							<span>part1</span>
+							<ol>
+								<li>item1</li>
+								<li>item2</li>
+								<li>item3</li>
+								<li>item4</li>
+								<li>item5</li>
+							</ol>
+						</li>
+						<li>
+							<span>part2</span>
+							<ol>
+								<li>item1</li>
+								<li>item2</li>
+								<li>item3</li>
+								<li>item4</li>
+								<li>item5</li>
+							</ol>
+						</li>
+						<li>
+							<span>part3</span>
+							<ol>
+								<li>item1</li>
+								<li>item2</li>
+								<li>item3</li>
+								<li>item4</li>
+								<li>item5</li>
+							</ol>
+						</li>
+					</ul>
+
+					<script type="text/javascript">
+						$(document).ready(function(){
+							$(".slidedown > li").customViewer({
+								timeoutTime: 1000,
+								hideAll: false,
+								contentSelector: 'ol',
+								handlerSelector: 'span',
+								showHandler: 'slidedown'
+							});
+						});
+
+					</script>
+				</div>
+				<pre data-paste="bl3"></pre>
+			</div>
+		</div>
+		<script type="text/javascript">
+
+				$("pre[data-paste]").each(function(){
+					var d=$(this).attr("data-paste");
+					$(this).text($("."+d).html());
+				});
+
+		</script>
+		
+	</body>
+</html>
