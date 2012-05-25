@@ -88,7 +88,7 @@ $.customViewer.addShowHandler('myhandler', function() {
 
 ### Custom events triggered on the plugin's target element
 
-cutomviewer-handlerchanged: when the handler has been changed
-cutomviewer-show: when the content is shown
-cutomviewer-hide: when the content is hidden
+* __cutomviewer-handlerchanged__: when the handler has been changed
+* __cutomviewer-show__: when the content is shown
+* __cutomviewer-hide__: when the content is hidden
 
