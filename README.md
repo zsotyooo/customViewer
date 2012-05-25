@@ -47,7 +47,7 @@ $(".accordion > li").customViewer('setOptions',[{option1: 'fdsfd', option2: 'fsd
 ### Writing your own handler:
 
 ```javascript
-$.customViewer.addShowHandler('accordion', function() {
+$.customViewer.addShowHandler('myhandler', function() {
 
 	this.init = function(contentViewerInstance) {
 		//mandatory function
