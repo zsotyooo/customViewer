@@ -16,7 +16,7 @@ $(".accordion > li").customViewer({
 });
 ```
 
-Options:
+### Options:
 
 ```javascript
 {
@@ -44,7 +44,7 @@ $(".accordion > li").customViewer('setShowHandler',['newhandler']);
 $(".accordion > li").customViewer('setOptions',[{option1: 'fdsfd', option2: 'fsdfds'}]);
 ```
 
-### Writing your own handler:
+## Writing your own handler:
 
 ```javascript
 $.customViewer.addShowHandler('myhandler', function() {
@@ -86,7 +86,7 @@ $.customViewer.addShowHandler('myhandler', function() {
 });
 ```
 
-### Custom events triggered on the plugin's target element
+## Custom events triggered on the plugin's target element
 
 * __cutomviewer-handlerchanged__: when the handler has been changed
 * __cutomviewer-show__: when the content is shown
