@@ -5,6 +5,8 @@ jQuery plugin for typical show/hide cases. You can write handlers easily, and sw
 
 ## Usage: 
 ### Applying to HTML elements:
+
+```javascript
 $(".accordion > li").customViewer({
 	timeoutTime: 1000,
 	hideAll: true,
@@ -12,8 +14,11 @@ $(".accordion > li").customViewer({
 	handlerSelector: 'span',
 	showHandler: 'accordion'
 });
+```
 
 Options:
+
+```javascript
 {
 	timeoutTime: 1000, //automatic hiding time in milliseconds
 	animationDuration: 'fast', //the animation's speed
@@ -25,15 +30,25 @@ Options:
 	handlerSelector: '.cv-handle', //selector for the handler element relative to the parent.
 	contentSelector: '.cv-content' //selector for the content element relative to the parent.
 }
+```
 
 ### Changing the show handler runtime:
+
+```javascript
 $(".accordion > li").customViewer('setShowHandler',['newhandler']);
+```
 
 ### Changing the options runtime:
+
+```javascript
 $(".accordion > li").customViewer('setOptions',[{option1: 'fdsfd', option2: 'fsdfds'}]);
+```
 
 ### Writing your own handler:
-$.customViewer.addShowHandler('accordion',function() {
+
+```javascript
+$.customViewer.addShowHandler('accordion', function() {
+
 	this.init = function(contentViewerInstance) {
 		//mandatory function
 		//called when the showHandler is set to the customViewer
@@ -69,8 +84,10 @@ $.customViewer.addShowHandler('accordion',function() {
 	//e.g: this.handlerClick, this.handlerMouseOver, this.contentMouseOut...
 
 });
+```
 
 ### Custom events triggered on the plugin's target element
+
 cutomviewer-handlerchanged: when the handler has been changed
 cutomviewer-show: when the content is shown
 cutomviewer-hide: when the content is hidden
