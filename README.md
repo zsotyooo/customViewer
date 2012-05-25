@@ -41,7 +41,7 @@ $(".accordion > li").customViewer('setShowHandler',['newhandler']);
 ### Changing the options runtime:
 
 ```javascript
-$(".accordion > li").customViewer('setOptions',[{option1: 'fdsfd', option2: 'fsdfds'}]);
+$(".accordion > li").customViewer('setOptions',[{option1: 'val1', option2: 'val2'}]);
 ```
 
 ## Writing your own handler:
@@ -49,18 +49,18 @@ $(".accordion > li").customViewer('setOptions',[{option1: 'fdsfd', option2: 'fsd
 ```javascript
 $.customViewer.addShowHandler('myhandler', function() {
 
-	this.init = function(contentViewerInstance) {
+	this.init = function(customViewerInstance) {
 		//mandatory function
 		//called when the showHandler is set to the customViewer
-		//contentViewerInstance: The main plugin, which controls the handler
-		//contentViewerInstance.element -> the HTML element the plugin is applied to
-		//contentViewerInstance.handler -> the handler HTML element
-		//contentViewerInstance.content -> the content HTML element
-		//contentViewerInstance.setActive(bool) -> sets the activeClassName and fire events
-		//contentViewerInstance.hideAllConcurrent() -> hides the other instances if hidAll option is true
-		//contentViewerInstance.setHideTimer() -> calls this showhandlers hide() function after options.timeoutTime
-		//contentViewerInstance.clearHideTimer() -> cancels the hide timer.
-		//contentViewerInstance.disableHide -> if set to true hiding is disabled (you must handle it in your showHandler)
+		//customViewerInstance: The main plugin which controls the show handler
+		//customViewerInstance.element -> the HTML element the plugin is applied to
+		//customViewerInstance.handler -> the handler HTML element
+		//customViewerInstance.content -> the content HTML element
+		//customViewerInstance.setActive(bool) -> sets the activeClassName and fires events
+		//customViewerInstance.hideAllConcurrent() -> hides the other instances if hideAll option is true
+		//customViewerInstance.setHideTimer() -> calls this showhandlers hide() function in options.timeoutTime milliseconds
+		//customViewerInstance.clearHideTimer() -> cancels the hide timer.
+		//customViewerInstance.disableHide -> if set to true hiding is disabled (you must handle it in your showHandler's hide function)
 		
 	};
 
@@ -75,13 +75,17 @@ $.customViewer.addShowHandler('myhandler', function() {
 	}
 
 	this.destory = function() {
+		//optional
 		//called when the showHandler this is changed to an other one
 		//you can change back everything here to the original state
 	};
 
-	//You can write also eventhandlers here for events on the handler or the content element
-	//function name format: handler or content + mammal case event
-	//e.g: this.handlerClick, this.handlerMouseOver, this.contentMouseOut...
+	this.contentMouseOver = function (){
+		//optional
+		//You can write also eventhandlers here for events on the handler or the content element
+		//function name format: handler or content + mammal case event
+		//e.g: this.handlerClick, this.handlerMouseOver, this.contentMouseOut...
+	}
 
 });
 ```
